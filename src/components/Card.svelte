@@ -5,30 +5,34 @@
   export let card;
   export let category;
   export let points;
+  export let type;
 </script>
 
-<div class="card">
-  <div class="color-grid">
-    <div class="black" />
-    <div class="red1" />
-    <div class="red2" />
-    <div class="green" />
+<div class="flex flex-row">
+  <div class="card">
+    <div class="color-grid">
+      <div class="black" />
+      <div class="red1" />
+      <div class="red2" />
+      <div class="green" />
+    </div>
+    <CardFront {type} {card} />
   </div>
-  <CardFront {card} />
-</div>
 
-<div class="card">
-  <div class="color-grid">
-    <div class="black" />
-    <div class="red1" />
-    <div class="red2" />
-    <div class="green" />
+  <div class="card">
+    <div class="color-grid">
+      <div class="black" />
+      <div class="red1" />
+      <div class="red2" />
+      <div class="green" />
+    </div>
+    <CardBack {card} {points} {category} />
   </div>
-  <CardBack {points} {category} />
 </div>
 
 <style>
   .card {
+    print-color-adjust: exact;
     width: 390px;
     height: 220px;
     display: grid;

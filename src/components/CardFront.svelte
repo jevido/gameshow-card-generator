@@ -1,13 +1,17 @@
 <script>
   export let card;
+  export let type;
 </script>
 
 <div class="info-grid">
-    <h4><i>S.S</i></h4>
-  <h3 class="question name">{@html card.question}</h3>
+  <h4 class="h-3">
+    <i class="absolute">S.S</i>
+    <i class="absolute right-4">{type}</i>
+  </h4>
+  <h3 class="question name">{@html card.question}?</h3>
   <div class="addr">
-    <p>
-      <strong>Antwoord:</strong>
+    <p class="flex w-[22rem]">
+      <strong>Antwoord:</strong>&nbsp;
       {card.answer}
     </p>
   </div>
@@ -39,7 +43,7 @@
     grid-row: 3;
   }
   .question {
-    display: grid;
+    display: flex;
     grid-row: inherit !important;
     font-weight: bold;
   }

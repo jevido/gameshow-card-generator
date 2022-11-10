@@ -1,22 +1,16 @@
 <script>
   import gameCards from "../game-cards";
   import Card from "$/Card.svelte";
+
+  console.debug(gameCards);
 </script>
 
 <div>
   {#each gameCards as category}
     {#each category.questions as card, index}
-      <Card {card} category={category.title} points={(index+1)*100}/>
+      <Card type={category.type} {card} category={category.title} points={(index + 1) * 100} />
     {/each}
   {/each}
-</div>
-
-
-<div class="credits">
-  <div>
-    Save image
-    <a href="#save">save image</a>
-  </div>
 </div>
 
 <style>
